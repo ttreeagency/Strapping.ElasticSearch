@@ -1,0 +1,10 @@
+prototype(Ttree.Strapping.ElasticSearch:DocumentSearchResultContent) < prototype(Fusion:Template) {
+	templatePath = 'resource://Ttree.Strapping.ElasticSearch/Private/Fusion/Components/DocumentSearchResult/DocumentSearchResultContent.html'
+
+	node = ${node}
+	highlight = ${Flowpack.SearchPlugin.Array.flatten(searchHit.highlight)}
+
+	title = ${q(node).property('title')}
+	description = ''
+	parents = ${Array.reverse(q(node).parents('[instanceof Neos.Neos:Document]').get())}
+}

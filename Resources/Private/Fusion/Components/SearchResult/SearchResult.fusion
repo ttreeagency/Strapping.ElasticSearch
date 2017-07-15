@@ -1,0 +1,23 @@
+prototype(Ttree.Strapping.ElasticSearch:SearchResult) < prototype(Fusion:Template) {
+	templatePath = 'resource://Ttree.Strapping.ElasticSearch/Private/Fusion/Components/SearchResult/SearchResult.html'
+
+	attributes = Fusion:Attributes
+
+	searchQuery = ${null}
+	totalSearchResults = ${this.searchQuery ? this.searchQuery.count() : 0}
+
+	configuration = Fusion:RawArray {
+		itemsPerPage = 25
+		insertAbove = false
+		insertBelow = true
+		maximumNumberOfLinks = 10
+	}
+
+	renderer = Fusion:Collection {
+		collection = ${searchResults}
+		itemRenderer = Ttree.Strapping.ElasticSearch:SearchResultRenderer {
+			@context.searchHit = ${searchResults.searchHitForNode(node)}
+		}
+		itemName = 'node'
+	}
+}

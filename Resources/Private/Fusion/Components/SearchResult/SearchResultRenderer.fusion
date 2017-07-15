@@ -1,0 +1,13 @@
+prototype(Ttree.Strapping.ElasticSearch:SearchResultRenderer) < prototype(Fusion:Case) {
+	default {
+		condition = Ttree.Fusion:CanRender {
+			type = ${node.nodeType.name + 'SearchResult'}
+		}
+		type = ${node.nodeType.name + 'SearchResult'}
+	}
+
+	fallback {
+		condition = true
+		type = 'Ttree.Strapping.ElasticSearch:DocumentSearchResult'
+	}
+}

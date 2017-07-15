@@ -1,0 +1,18 @@
+Neos:
+  Neos:
+    fusion:
+      autoInclude:
+        Ttree.Strapping.ElasticSearch: true
+
+  ContentRepository:
+    Search:
+      indexAllWorkspaces: true
+      indexingBatchSize: 750
+      elasticSearch:
+        indexName: ttree
+
+Flowpack:
+  ElasticSearch:
+    ContentRepositoryAdaptor:
+      driver:
+        version: 2.x

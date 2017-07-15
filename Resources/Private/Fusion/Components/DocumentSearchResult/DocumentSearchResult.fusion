@@ -1,0 +1,3 @@
+prototype(Ttree.Strapping.ElasticSearch:DocumentSearchResult) < prototype(Fusion:Tag) {
+	content = Ttree.Strapping.ElasticSearch:DocumentSearchResultContent
+}

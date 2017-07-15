@@ -1,0 +1,11 @@
+'Ttree.Strapping:Content.Headline':
+  properties:
+    'title':
+      search:
+        fulltextExtractor: '${Indexing.extractHtmlTags(value)}'
+
+'Ttree.Strapping:Content.Text':
+  properties:
+    'text':
+      search:
+        fulltextExtractor: '${Indexing.extractHtmlTags(value)}'

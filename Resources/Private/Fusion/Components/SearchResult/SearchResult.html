@@ -1,0 +1,9 @@
+{namespace fusion=Neos\Fusion\ViewHelpers}
+{namespace search=Neos\ContentRepository\Search\ViewHelpers}
+<div{attributes -> f:format.raw()}>
+<f:if condition="{searchQuery}">
+	<search:widget.paginate query="{searchQuery}" as="results" configuration="{configuration}">
+		<fusion:render path="renderer" context="{searchResults: results}"/>
+	</search:widget.paginate>
+</f:if>
+</div>
