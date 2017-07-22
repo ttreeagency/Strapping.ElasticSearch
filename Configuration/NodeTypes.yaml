@@ -1,11 +1,43 @@
+'Neos.Neos:Document':
+  properties:
+    'uriPathSegment':
+      search:
+        elasticSearchMapping:
+          type: string
+          index: not_analyzed
+    title:
+      search:
+        fulltextExtractor: ${Indexing.extractInto('h1', value)}
+        elasticSearchMapping:
+          include_in_all: true
+          analyzer: 'dimension_specific'
+          search_analyzer: 'dimension_specific'
+    '__fulltextParts':
+      search:
+        elasticSearchMapping:
+          analyzer: 'dimension_specific'
+          search_analyzer: 'dimension_specific'
+    '__fulltext':
+      search:
+        indexing: ''
+        elasticSearchMapping:
+          analyzer: 'dimension_specific'
+          search_analyzer: 'dimension_specific'
+
 'Ttree.Strapping:Content.Headline':
   properties:
     'title':
       search:
         fulltextExtractor: '${Indexing.extractHtmlTags(value)}'
+        elasticSearchMapping:
+          analyzer: 'dimension_specific'
+          search_analyzer: 'dimension_specific'
 
 'Ttree.Strapping:Content.Text':
   properties:
     'text':
       search:
         fulltextExtractor: '${Indexing.extractHtmlTags(value)}'
+        elasticSearchMapping:
+          analyzer: 'dimension_specific'
+          search_analyzer: 'dimension_specific'
