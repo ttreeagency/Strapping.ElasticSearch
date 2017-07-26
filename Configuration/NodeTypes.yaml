@@ -2,7 +2,7 @@
   search:
     elasticSearchMapping:
       _all:
-        analyzer: 'dimension_specific'
+        analyzer: 'dimension_specific_ngram'
         search_analyzer: 'dimension_specific'
 
 'Neos.NodeTypes:Text':
@@ -24,11 +24,10 @@
     title:
       search:
         fulltextExtractor: ${Indexing.extractInto('h1', value)}
-        elasticSearchMapping: &STRING
+        elasticSearchMapping: &STRING_INCLUDE_IN_ALL
           type: string
+          index: not_analyzed
           include_in_all: true
-          analyzer: 'dimension_specific'
-          search_analyzer: 'dimension_specific'
     '__fulltext':
       search:
         indexing: ''
@@ -36,25 +35,25 @@
           type: object
           properties:
             'h1':
-              <<: *STRING
+              <<: *STRING_INCLUDE_IN_ALL
               boost: 20
             'h2':
-              <<: *STRING
+              <<: *STRING_INCLUDE_IN_ALL
               boost: 12
             'h3':
-              <<: *STRING
+              <<: *STRING_INCLUDE_IN_ALL
               boost: 10
             'h4':
-              <<: *STRING
+              <<: *STRING_INCLUDE_IN_ALL
               boost: 5
             'h5':
-              <<: *STRING
+              <<: *STRING_INCLUDE_IN_ALL
               boost: 3
             'h6':
-              <<: *STRING
+              <<: *STRING_INCLUDE_IN_ALL
               boost: 2
             'text':
-              <<: *STRING
+              <<: *STRING_INCLUDE_IN_ALL
               boost: 1
 
 'Ttree.Strapping:Content.Headline':
@@ -63,7 +62,7 @@
       search:
         fulltextExtractor: ${Indexing.extractInto('h1', value)}
         elasticSearchMapping:
-          <<: *STRING
+          <<: *STRING_INCLUDE_IN_ALL
 
 'Ttree.Strapping:Content.Text':
   properties:
@@ -71,23 +70,15 @@
       search:
         fulltextExtractor: '${Indexing.extractHtmlTags(value)}'
         elasticSearchMapping:
-          <<: *STRING
+          <<: *STRING_INCLUDE_IN_ALL
 
 'Ttree.Strapping:Mixin.Image':
-  abstract: true
-  ui:
-    inspector:
-      groups:
-        image:
-          label: i18n
-          position: 5
-          icon: 'icon-image'
   properties:
     alternativeText:
       search:
         elasticSearchMapping:
-          <<: *STRING
+          <<: *STRING_INCLUDE_IN_ALL
     imageTitle:
       search:
         elasticSearchMapping:
-          <<: *STRING
+          <<: *STRING_INCLUDE_IN_ALL
