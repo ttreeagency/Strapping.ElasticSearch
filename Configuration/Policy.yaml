@@ -1,0 +1,11 @@
+
+privilegeTargets:
+  Neos\Flow\Security\Authorization\Privilege\Method\MethodPrivilege:
+    Ttree.Strapping.ElasticSearch.PaginateController:
+      matcher: 'method(Ttree\Strapping\ElasticSearch\ViewHelpers\Widget\Controller\PaginateController->.*Action())'
+roles:
+  'Neos.Flow:Everybody':
+    privileges:
+      -
+        privilegeTarget: Ttree.Strapping.ElasticSearch.PaginateController
+        permission: GRANT
