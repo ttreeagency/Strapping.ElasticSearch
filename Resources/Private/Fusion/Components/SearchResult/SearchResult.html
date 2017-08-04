@@ -1,7 +1,7 @@
 {namespace fusion=Neos\Fusion\ViewHelpers}
 {namespace search=Ttree\Strapping\ElasticSearch\ViewHelpers}
 <div{attributes -> f:format.raw()}>
-	<search:widget.paginate query="{searchQuery}" as="results" configuration="{configuration}">
+	<search:widget.paginate widgetId="search" query="{searchQuery}" as="results" configuration="{configuration}">
 		<fusion:render path="renderer" context="{searchResults: results}"/>
 	</search:widget.paginate>
 </div>
