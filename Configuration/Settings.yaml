@@ -6,8 +6,7 @@ Neos:
 
   ContentRepository:
     Search:
-      indexAllWorkspaces: true
-      indexingBatchSize: 200
+      indexAllWorkspaces: false
       elasticSearch:
         indexName: ttree
 
