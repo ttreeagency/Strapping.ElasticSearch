@@ -1,4 +1,4 @@
-prototype(Ttree.Strapping.ElasticSearch:SearchResultRenderer) < prototype(Fusion:Case) {
+prototype(Ttree.Strapping.ElasticSearch:SearchResultRenderer) < prototype(Neos.Fusion:Case) {
 	default {
 		condition = Ttree.Fusion:CanRender {
 			type = ${node.nodeType.name + 'SearchResult'}

@@ -1,4 +1,4 @@
-prototype(Ttree.Strapping.ElasticSearch:DocumentSearchResultContent) < prototype(Fusion:Template) {
+prototype(Ttree.Strapping.ElasticSearch:DocumentSearchResultContent) < prototype(Neos.Fusion:Template) {
 	templatePath = 'resource://Ttree.Strapping.ElasticSearch/Private/Fusion/Components/DocumentSearchResult/DocumentSearchResultContent.html'
 
 	node = ${node}
