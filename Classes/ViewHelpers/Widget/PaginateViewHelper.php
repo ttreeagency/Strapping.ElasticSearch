@@ -17,12 +17,12 @@ class PaginateViewHelper extends AbstractWidgetViewHelper
     /**
      * Render this view helper
      *
-     * @param QueryBuilderInterface $query
      * @param string $as
+     * @param QueryBuilderInterface $query
      * @param array $configuration
      * @return string
      */
-    public function render(QueryBuilderInterface $query = null, $as, array $configuration = array('itemsPerPage' => 10, 'insertAbove' => false, 'insertBelow' => true, 'maximumNumberOfLinks' => 99))
+    public function render($as, QueryBuilderInterface $query = null, array $configuration = array('itemsPerPage' => 10, 'insertAbove' => false, 'insertBelow' => true, 'maximumNumberOfLinks' => 99))
     {
         if ($query === null) {
             return '';
