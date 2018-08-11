@@ -4,7 +4,7 @@
     "type": "neos-package",
     "license": "MIT",
     "require": {
-        "ttree/strapping": "^0.1",
+        "ttree/strapping": "^0.2",
         "flowpack/elasticsearch-contentrepositoryadaptor": "^4.0"
     },
     "autoload": {
