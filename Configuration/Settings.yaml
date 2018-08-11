@@ -14,4 +14,4 @@ Flowpack:
   ElasticSearch:
     ContentRepositoryAdaptor:
       driver:
-        version: 2.x
+        version: 5.x
